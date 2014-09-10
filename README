@@ -9,11 +9,13 @@ algorithm in order to learn visual hierarchical vocabularies.
 Important notice: Some parts of the code are now hidden, since 
 they contain some modifications over the ECCV code which have 
 not been documented in a paper yet. We sincerely apologize 
-for any inconvenience caused. 
+for any inconvenience caused. We will try our best to make these
+parts and more improvements available really soon.
 
 The algorithm is implemented entirely in Matlab. It has been
 tested with 2012a and up. If you have any problems, please ping 
-rusenaktas <at> gmail <dot> com.
+rusenaktas <at> gmail <dot> com. You can also use the Issues section
+on our Github page.
 
 
 
