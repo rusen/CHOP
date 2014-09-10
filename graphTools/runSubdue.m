@@ -471,7 +471,8 @@ function [subs] = evaluateSubs(subs, evalMetric, allEdges, allEdgeNodePairs, all
             end
             
             % Find the reduction in the number of edges.
-            numberOfEdgeReductions = cellfun(@(x,y,z) numel(x) + numel(y) - (numel(setdiff(x, z)) + numel(setdiff(y, z))) , ...
+            numberOfEdgeReductions = cellfun(@(x,y,z) numel(x) + numel(y) - ... % Deletion of all edges. (own nodes deleted twice)
+                (numel(find(ismember(x, z))) + numel(setdiff(x, z)) + numel(setdiff(y, z))) , ... % (compensating for doubly deleted own nodes, plus addition of new nodes in/out
                 instanceInNeighbors, instanceOutNeighbors, instanceChildren);
                 
             % Learn number of instances/edges in each instance.
