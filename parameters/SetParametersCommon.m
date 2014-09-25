@@ -196,5 +196,14 @@ function [ options ] = SetParametersCommon( datasetName, options )
     options.subdue.maxSize = 3; % Maximum number of nodes in a composition
     options.subdue.nsubs = 10000;  % Maximum number of nodes allowed in a level
     options.subdue.beam = 200;   % Beam length in SUBDUE
+    options.subdue.overlap = false;   % If true, overlaps between a substructure's 
+                                     % instances are considered in the
+                                     % evaluation of the sub. Otherwise,
+                                     % unique (in terms of node sets) instances 
+                                     % are taken into account [DEFAULT].
+                                     % However, all possible instances are
+                                     % returned anyway in order to
+                                     % introduce redundancy in the final
+                                     % object graphs.
 end
 

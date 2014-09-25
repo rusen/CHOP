@@ -1,7 +1,7 @@
 %> Name: fastintersect
 %>
 %> Description: Provides a fast intersection function between two sets of
-%> positive integers. (Code found on the internet)
+%> positive integers, (Code found on the internet) with A and B NOT empty.
 %>
 %> @param A First set to intersect.
 %> @param B Second set to intersect.
@@ -13,11 +13,7 @@
 %> Updates
 %> Ver 1.0 on 17.02.2014
 function C = fastintersect(A,B)
-    if ~isempty(A)&&~isempty(B)
-       P = zeros(1, max(max(A),max(B)) ) ;
-       P(A) = 1;
-       C = B(logical(P(B)));
-    else
-        C = [];
-    end
+    P = zeros(1, max(max(A),max(B)) ) ;
+    P(A) = 1;
+    C = B(logical(P(B)));
 end
