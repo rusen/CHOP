@@ -180,7 +180,7 @@ function [ options ] = SetParametersCommon( datasetName, options )
                                            % edgeLabelId (int,4) + 
                                            % destinationNode (int,4) + 
                                            % isDirected (byte, 1) = 9.
-    options.subdue.maxTime = 1800;           % Max. number of seconds 'self' 
+    options.subdue.maxTime = 30;           % Max. number of seconds 'self' 
                                             % type implemented subdue is
                                             % run over data. Typically
                                             % around 100 (secs) for toy data. 
@@ -194,8 +194,8 @@ function [ options ] = SetParametersCommon( datasetName, options )
                                     % gets looser.
     options.subdue.minSize = 2; % Minimum number of nodes in a composition 
     options.subdue.maxSize = 3; % Maximum number of nodes in a composition
-    options.subdue.nsubs = 10000;  % Maximum number of nodes allowed in a level
-    options.subdue.beam = 200;   % Beam length in SUBDUE
+    options.subdue.nsubs = 200;  % Maximum number of nodes allowed in a level
+    options.subdue.beam = 100;   % Beam length in SUBDUE
     options.subdue.overlap = false;   % If true, overlaps between a substructure's 
                                      % instances are considered in the
                                      % evaluation of the sub. Otherwise,
