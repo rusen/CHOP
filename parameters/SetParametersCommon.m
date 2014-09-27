@@ -180,14 +180,14 @@ function [ options ] = SetParametersCommon( datasetName, options )
                                            % edgeLabelId (int,4) + 
                                            % destinationNode (int,4) + 
                                            % isDirected (byte, 1) = 9.
-    options.subdue.maxTime = 3600;           % Max. number of seconds 'self' 
+    options.subdue.maxTime = 1800;           % Max. number of seconds 'self' 
                                             % type implemented subdue is
                                             % run over data. Typically
                                             % around 100 (secs) for toy data. 
                                             % You can set to higher values
                                             % (e.g. 3600 secs) for large
                                             % datasets.
-    options.subdue.threshold = 0.05; % Theshold for elastic part matching. 
+    options.subdue.threshold = 0.06; % Theshold for elastic part matching. 
                                     % Can be in [0,1]. 
                                     % 0: Strict matching, 
                                     % (value -> 1) Matching criterion 
