@@ -87,7 +87,7 @@ function [ options ] = SetParametersCommon( datasetName, options )
                                           % specific part pair is reduced
                                           % automatically to match this
                                           % number, if possible.
-    options.scaling = 0.6;            % Each successive layer is downsampled 
+    options.scaling = 0.5;            % Each successive layer is downsampled 
                                        % with a ratio of 1/scaling. Changes
                                        % formation of edges in upper
                                        % layers, since edge radius
@@ -187,7 +187,7 @@ function [ options ] = SetParametersCommon( datasetName, options )
                                             % You can set to higher values
                                             % (e.g. 3600 secs) for large
                                             % datasets.
-    options.subdue.threshold = 0.05; % Theshold for elastic part matching. 
+    options.subdue.threshold = 0.06; % Theshold for elastic part matching. 
                                     % Can be in [0,1]. 
                                     % 0: Strict matching, 
                                     % (value -> 1) Matching criterion 
@@ -196,5 +196,14 @@ function [ options ] = SetParametersCommon( datasetName, options )
     options.subdue.maxSize = 3; % Maximum number of nodes in a composition
     options.subdue.nsubs = 10000;  % Maximum number of nodes allowed in a level
     options.subdue.beam = 200;   % Beam length in SUBDUE
+    options.subdue.overlap = false;   % If true, overlaps between a substructure's 
+                                     % instances are considered in the
+                                     % evaluation of the sub. Otherwise,
+                                     % unique (in terms of node sets) instances 
+                                     % are taken into account [DEFAULT].
+                                     % However, all possible instances are
+                                     % returned anyway in order to
+                                     % introduce redundancy in the final
+                                     % object graphs.
 end
 

@@ -69,7 +69,7 @@ function [totalInferenceTime] = singleTestImage(testFileName, vocabulary, redund
         newLevel = collectInstances(vocabulary{levelItr}, redundantVocabulary{levelItr}, mainGraph{levelItr-1}, options, levelItr);
         duration = toc(startTime);
         totalInferenceTime = totalInferenceTime + duration;
-        
+
         %% Assign positions, image ids, and leaf nodes. 
         % If no new subs have been found, finish processing.
         if isempty(newLevel)
