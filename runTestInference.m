@@ -65,8 +65,7 @@ function [ totalInferenceTime ] = runTestInference( datasetName, ext )
                 if ~isempty(categoryStrSepIdx)
                     categoryStr = categoryStr(:, 1:(categoryStrSepIdx(1)-1));
                 end
-                chosenCategoryArr = strfind(categoryNames, categoryStr);
-                chosenCategoryArr = cellfun(@(x) ~isempty(x), chosenCategoryArr);
+                chosenCategoryArr = cellfun(@(x) strcmp(x, categoryStr), categoryNames);
                 [categoryLabel] = find(chosenCategoryArr, 1, 'first'); %#ok<NASGU>
             end
             save([options.testInferenceFolder '/' fileName '_test.mat'], 'categoryLabel');
